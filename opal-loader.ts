@@ -22,7 +22,7 @@ export default function loader(
   const command = os.platform().match(/win/) ? 'ruby.exe' : 'ruby';
   const args = [
     '-Eutf-8',
-    path.resolve(__dirname, 'build.rb'),
+    path.resolve(__dirname, '../build.rb'),
     path.basename(this.resourcePath),
   ];
 
