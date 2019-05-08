@@ -1,0 +1,30 @@
+{
+  "name": "opal-loader",
+  "version": "0.1.0",
+  "description": "A ruby loader module for webpack using Opal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ukatama/opal-loader.git"
+  },
+  "license": "MIT",
+  "author": "ukatama",
+  "main": "lib/opal-loader.js",
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "lint": "eslint ./**/*.ts"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "^1.7.0",
+    "eslint-config-google": "^0.12.0",
+    "eslint-plugin-prettier": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.0",
+    "@types/webpack": "^4.4.31",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "prettier": "^1.17.0",
+    "typescript": "^3.4.5"
+  }
+}
