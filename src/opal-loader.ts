@@ -1,9 +1,17 @@
 /* eslint no-invalid-this: off */
 
 import { spawn } from 'child_process';
-import * as os from 'os';
-import * as path from 'path';
-import { loader as WebpackLoader } from 'webpack';
+import { getOptions } from 'loader-utils';
+import { platform } from 'os';
+import { basename } from 'path';
+import { loader as WebpackLoader, loader } from 'webpack';
+
+declare const BUILDER: string | undefined;
+const Builder = typeof BUILDER === 'undefined' ? null : BUILDER;
+
+export interface LoaderOptions {
+  paths?: string[];
+}
 
 /**
  * Opal loader
@@ -14,16 +22,19 @@ export default function loader(
   this: WebpackLoader.LoaderContext,
   content: string,
 ): void {
-  const callback = this.async();
+  const callback = this.async() as loader.loaderCallback;
   if (!callback) throw new Error('Callback is undefined');
+
+  const options = getOptions(this) as LoaderOptions;
 
   const chunks: Buffer[] = [];
 
-  const command = os.platform().match(/win/) ? 'ruby.exe' : 'ruby';
+  const command = platform().match(/win/) ? 'ruby.exe' : 'ruby';
   const args = [
     '-Eutf-8',
-    path.resolve(__dirname, '../build.rb'),
-    path.basename(this.resourcePath),
+    ...(Builder ? ['-e', Builder] : ['src/build.rb']),
+    basename(this.resourcePath),
+    ...(options.paths || []),
   ];
 
   // console.log(command, args.join(' '));
