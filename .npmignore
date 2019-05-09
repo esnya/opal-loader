@@ -1,0 +1,4 @@
+*.rb
+Gemfile.lock
+node_modules
+webpack.config.*
