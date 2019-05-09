@@ -4,7 +4,7 @@ opal-loader
 ## Usage
 ### Install
 ```bash
-$ npm install --save-dev opal-loader
+$ npm install --save-dev ukalib-opal-loader
 ```
 
 ### Add a rule into webpack.config.js
@@ -16,7 +16,7 @@ module.exports = {
       // ...
       {
         test: /\.rb$/,
-        loader: 'opal-loader',
+        loader: 'ukalib-opal-loader',
       },
     ],
   },

@@ -1,5 +1,5 @@
 {
-  "name": "opal-loader",
+  "name": "ukalib-opal-loader",
   "version": "0.1.0",
   "description": "A ruby loader module for webpack using Opal",
   "repository": {
