@@ -15,6 +15,6 @@ if content =~ /require ['"]opal["']/ then
   puts("(function(){#{compiled}}).call(context);")
   puts("module.exports = context.Opal;")
 else
-  puts("var Opal = require('opal-loader/runtime');")
+  puts("var Opal = require('ukalib-opal-loader/runtime');")
   puts(compiled)
 end
