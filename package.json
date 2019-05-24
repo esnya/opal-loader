@@ -1,6 +1,6 @@
 {
   "name": "ukalib-opal-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A ruby loader module for webpack using Opal",
   "repository": {
     "type": "git",
